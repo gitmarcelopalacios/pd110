@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>{{ctx_titulo}}</title>
+    </head>
+    <body>
+        {{ctx_titulo}}<br>
+        {{request.user}}<br>
+        <hr/>
+        <br/>
+        {% if ctx_form %}
+        <form method="POST" action="">{% csrf_token %}
+            {{ ctx_form.as_p }}
+            <input type="submit" value="Registrame">
+        </form>
+        {% endif %}
+    </body>
+</html>
